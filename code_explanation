@@ -1,0 +1,26 @@
+1. Importing Required Libraries:
+yt_dlp: A Python library used to download YouTube videos (or videos from other platforms). It is an updated version of youtube-dl.
+tkinter: A built-in Python library for creating graphical user interfaces (GUIs), used here to open a folder dialog for selecting where to save the downloaded video.
+filedialog: A module from tkinter used to create a file/folder selection dialog.
+2. download_video Function:
+Purpose: This function downloads the YouTube video using yt-dlp.
+Parameters:
+url: The YouTube URL of the video to be downloaded.
+save_path: The folder path where the video should be saved.
+Process:
+The function sets options for yt-dlp, like specifying the video format (mp4) and the output file name based on the video title.
+It then uses yt-dlp.YoutubeDL to download the video from the URL provided.
+If successful, it prints "Video downloaded successfully!" If there’s an error, it prints the error message.
+3. open_file_dialog Function:
+Purpose: This function opens a folder selection dialog so the user can choose where to save the video.
+Process:
+It uses filedialog.askdirectory() to prompt the user to select a folder.
+If a folder is selected, it returns the folder path. If no folder is selected, it returns None.
+4. Main Program (Inside if __name__ == "__main__"):
+Purpose: This is the entry point of the program. It starts the program and handles the logic of downloading the video.
+Process:
+The program hides the main tkinter window (root.withdraw()), as we only need the file dialog.
+It then asks the user for a YouTube video URL via input().
+Next, it opens the file dialog to let the user select where to save the downloaded video.
+If the user selects a folder, the download_video function is called to start downloading the video.
+If no folder is selected or an error occurs, appropriate messages are s
